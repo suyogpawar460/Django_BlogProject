@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block homeactive %} active {% endblock homeactive %}
+{% load static %}
+
+{% block title %}
+    Post Details
+{% endblock title %}
+
+{% block main_content %}
+    {% if post %}
+
+        <article class="media content-section">
+            <img src="{{ post.author.profile.image.url }}" class="rounded-circle"
+                 style="width: 75px; height: 75px">
+            <div class="media-body">
+                <div class="article-metadata">
+                    <a href="#"
+                       class="me-3 article-author">{{ post.author }}</a>
+                    <small class="text-danger">{{ post.date_posted|date:'d M Y, h:i:s a' }}</small>
+                    <div>
+                        {% if request.user == post.author %}
+                            <a href="{% url 'post_update' post.id %}" class="btn btn-sm btn-success">Update</a>
+                            <a href="{% url 'post_delete' post.id %}" class="btn btn-sm btn-danger">Delete</a>
+                        {% endif %}
+                    </div>
+
+                </div>
+
+                <a href="#"
+                   class="article-title">{{ post.title }}</a>
+                <p class="article-content">{{ post.content }}</p>
+            </div>
+        </article>
+
+    {% else %}
+        <h1>Blog Posts Information not available</h1>
+    {% endif %}
+{% endblock main_content %}

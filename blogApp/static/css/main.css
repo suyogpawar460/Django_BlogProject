@@ -1,0 +1,45 @@
+body{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    background-color: aquamarine;
+}
+.content-section{
+    border: 5px solid red;
+    margin-bottom: 10px;
+    background-color: white;
+    padding: 10px 20px;
+}
+
+.article-title{
+    color: red;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: "Algerian";
+    text-decoration: none;
+}
+
+.article-content{
+    color: blue;
+    font-family: "Arial Narrow";
+}
+
+.article-author{
+    color: brown;
+    text-decoration: none;
+    font-size: 30px;
+}
+
+.article-metadata{
+    border-bottom: 5px solid chartreuse;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.navbar{
+    margin-bottom: 50px;
+}
+
+.account-img{
+    width: 75px;
+    height: 75px;
+}
